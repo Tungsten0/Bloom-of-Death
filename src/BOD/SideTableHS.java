@@ -6,7 +6,7 @@ import org.jogamp.java3d.utils.geometry.Primitive;
 import org.jogamp.java3d.utils.image.TextureLoader;
 import org.jogamp.vecmath.*;
 
-public class SideTableHS extends BaseShapesHS {
+public class SideTableHS extends BaseShapesHS1 {
 
     public SideTableHS() {
         // Create the tabletop

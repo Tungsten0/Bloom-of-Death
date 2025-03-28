@@ -6,7 +6,7 @@ import org.jogamp.java3d.utils.geometry.Primitive;
 import org.jogamp.java3d.utils.geometry.Sphere;
 import org.jogamp.vecmath.*;
 
-public class Pill extends BaseShapesHS {
+public class Pill extends BaseShapesHS1 {
 
     public Pill() {
         // Create the pill

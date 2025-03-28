@@ -1,4 +1,8 @@
 package BOD;
+
+
+
+
 // Copyright material for students working on assignments
 import java.awt.Font;
 import org.jogamp.java3d.*;
@@ -8,7 +12,7 @@ import org.jogamp.vecmath.*;
 import org.jogamp.java3d.utils.geometry.Cylinder;
 import org.jogamp.java3d.utils.geometry.Sphere;
 
-public abstract class BaseShapesHS {//this is the abstruct class for creating and pos the 3d shapes that i will need tem 
+public abstract class BaseShapesHS1 {//this is the abstruct class for creating and pos the 3d shapes that i will need tem 
 	protected TransformGroup objTG = new TransformGroup(); // use 'objTG' to position an object
 	protected abstract Node create_Object();               // allow derived classes to create different objects
 	protected Appearance app;                              // allow each object to define its own appearance
@@ -16,8 +20,8 @@ public abstract class BaseShapesHS {//this is the abstruct class for creating an
 		return objTG;   //return the transform group that i cretaed 
 	}
 }//the end of the abstruct class 
-class SquareShape extends BaseShapesHS {//the begining of the subclass that extract the absrtuct class 
-	public SquareShape() {//here i will represent a square base for the 3d model
+class SquareShape1 extends BaseShapesHS1 {//the begining of the subclass that extract the absrtuct class 
+	public SquareShape1() {//here i will represent a square base for the 3d model
 		Transform3D translator = new Transform3D();//create the transform3d
 		translator.setTranslation(new Vector3d(0.0, -0.54, 0.0));//set the translautions to be beloow the tower
 		objTG = new TransformGroup(translator);            // down half of the tower and base's heights
@@ -28,7 +32,7 @@ class SquareShape extends BaseShapesHS {//the begining of the subclass that extr
 		return new Box(0.5f, 0.04f, 0.5f, Primitive.GENERATE_NORMALS, app);//create a square base
 	}
 }//the end of the SquareShape sub class
-class CylinderTower extends BaseShapesHS {//here i am creating the cylindrical tower for the 3d model
+class CylinderTower extends BaseShapesHS1 {//here i am creating the cylindrical tower for the 3d model
     public CylinderTower() {
         objTG.addChild(create_Object());//here i am attaching the cylinder to transormGroup 
     }
@@ -37,7 +41,7 @@ class CylinderTower extends BaseShapesHS {//here i am creating the cylindrical t
         return new Cylinder(0.12f, 1.0f, Primitive.GENERATE_NORMALS, 30, 30, app);//create a cylinder
     }
 }//the end of the CylinderTower sub class
-class SphereYawDrive extends BaseShapesHS {//here i am creating a sub class that repersent the spheriacal component for the yaw drive
+class SphereYawDrive extends BaseShapesHS1 {//here i am creating a sub class that repersent the spheriacal component for the yaw drive
     public SphereYawDrive() {
         Transform3D translator = new Transform3D();//creating the transform 3d to use it 
         translator.setTranslation(new Vector3d(0.0, 0.51, 0.0)); // here i am will osition the sphere on top of the tower
@@ -50,7 +54,7 @@ class SphereYawDrive extends BaseShapesHS {//here i am creating a sub class that
         return new Sphere(0.12f, Primitive.GENERATE_NORMALS,30, app); // Create a sphere
     }
 }//the end of the sphereYawDeive sub class
-class boxNacelleShape extends BaseShapesHS {//here i am creating the the nacelle shape on top of the sphere
+class boxNacelleShape extends BaseShapesHS1 {//here i am creating the the nacelle shape on top of the sphere
     public boxNacelleShape() {
         Transform3D translator = new Transform3D();//creating the transform 3d to use it 
         translator.setTranslation(new Vector3d(0.0, 0.69, 0.12)); // Position the nacelle on top of the sphere
@@ -66,7 +70,7 @@ class boxNacelleShape extends BaseShapesHS {//here i am creating the the nacelle
         return new Box(0.26f, 0.06f, 0.12f, Primitive.GENERATE_NORMALS, app); // Create a box for the nacelle
     }
 }//the end of the boxNacelleShape sub class
-class RotorBladeShape extends BaseShapesHS {//the begining  of the RotorBladeShape
+class RotorBladeShape extends BaseShapesHS1 {//the begining  of the RotorBladeShape
     public RotorBladeShape() {
         objTG.addChild(create_Object());
     }
@@ -85,7 +89,7 @@ class RotorBladeShape extends BaseShapesHS {//the begining  of the RotorBladeSha
         return bladeTG;//retrun the group of the transform that i created
     }
 }//the end of the RotorBladeShape subclass
-class redSphere extends BaseShapesHS{//this sub class that represent the red sphere 
+class redSphere extends BaseShapesHS1{//this sub class that represent the red sphere 
 	public redSphere() {
 		Transform3D traslator = new Transform3D();
 		traslator.setTranslation(new Vector3d(0, 0.69f, 0.38));//set the translations 
@@ -97,12 +101,12 @@ class redSphere extends BaseShapesHS{//this sub class that represent the red sph
 		return new Sphere(0.06f, Primitive.GENERATE_NORMALS, 30, app);
 	}
 }
-class ColorString extends BaseShapesHS {// a derived class to create a string label and place it to the bottom of the self-made cone 
+class ColorString1 extends BaseShapesHS1 {// a derived class to create a string label and place it to the bottom of the self-made cone 
 	private String str;
 	private Color3f clr;
 	private double scl;
 	private Point3f pos;                                           // make the label adjustable with parameters
-	public ColorString(String str_ltrs, Color3f str_clr, double s, Point3f p) {
+	public ColorString1(String str_ltrs, Color3f str_clr, double s, Point3f p) {
 		str = str_ltrs;	
 		clr = str_clr;
 		scl = s;
@@ -129,7 +133,7 @@ class ColorString extends BaseShapesHS {// a derived class to create a string la
 		return new Shape3D(text3D, app);                   // return a string label with the appearance
 	}
 }
-class colourString extends BaseShapesHS {//here i am doing the colored string label in the sub class that i modified it from the prof code
+class colourString extends BaseShapesHS1 {//here i am doing the colored string label in the sub class that i modified it from the prof code
     private String text;
     private Color3f color;
     
@@ -158,7 +162,7 @@ class colourString extends BaseShapesHS {//here i am doing the colored string la
     }
 }
 
-class coordinateSystem extends BaseShapesHS{//here is the sub class the  optional for Assignment 1
+class coordinateSystem extends BaseShapesHS1{//here is the sub class the  optional for Assignment 1
 	public coordinateSystem() {//the constuctor 
 		objTG.addChild(create_Object());
 	}

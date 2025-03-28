@@ -130,7 +130,7 @@ public class ChairHS extends JPanel{
 
 
 
-class ChairHS2 extends BaseShapesHS {
+class ChairHS2 extends BaseShapesHS1 {
 
 	public ChairHS2() {
 	    // Create a hierarchy of TransformGroups

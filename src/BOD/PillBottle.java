@@ -6,7 +6,7 @@ import org.jogamp.java3d.utils.geometry.Primitive;
 import org.jogamp.java3d.utils.image.TextureLoader;
 import org.jogamp.vecmath.*;
 
-public class PillBottle extends BaseShapesHS {
+public class PillBottle extends BaseShapesHS1 {
 
     public PillBottle() {
         // Create the bottle

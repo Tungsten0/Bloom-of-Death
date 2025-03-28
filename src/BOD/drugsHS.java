@@ -7,7 +7,7 @@ import org.jogamp.java3d.utils.geometry.Sphere;
 import org.jogamp.java3d.utils.image.TextureLoader;
 import org.jogamp.vecmath.*;
 
-public class drugsHS extends BaseShapesHS {
+public class drugsHS extends BaseShapesHS1 {
 
     public drugsHS() {
         // Create the scene
