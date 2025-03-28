@@ -49,6 +49,9 @@ public class TableLamp {
 		TLObjects[5] = new TLShadeFitting(); 
 		TLObjects[4].add_Child(TLObjects[5].position_Object());
 		
+		
+		
+		
 		return TableLampTG;
 	}
 

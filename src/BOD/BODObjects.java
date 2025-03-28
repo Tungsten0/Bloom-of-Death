@@ -119,8 +119,8 @@ public abstract class BODObjects {
 	
 }
 
-class BaseShape extends BODObjects {
-	public BaseShape() {
+class BaseShape2 extends BODObjects {
+	public BaseShape2() {
 		Transform3D translator = new Transform3D();
 		translator.setTranslation(new Vector3d(0.0, -0.54, 0));
 		objTG = new TransformGroup(translator);            // down half of the tower and base's heights

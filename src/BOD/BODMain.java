@@ -160,13 +160,13 @@ public class BODMain extends JPanel implements KeyListener, MouseListener, Mouse
         sceneTG.addChild(roomTG);
 
         // Add only major objects
-        roomTG.addChild(TableLamp.create_TableLamp());
+        //roomTG.addChild(TableLamp.create_TableLamp());
 
         // Add only major objects
-        sceneTG.addChild(addDebugCorners());
+        //sceneTG.addChild(addDebugCorners());
    
         // Add debug corner markers
-        sceneTG.addChild(addDebugCorners());
+        //sceneTG.addChild(addDebugCorners());
       
 
         Lights.setupSceneEffects(sceneTG);
@@ -223,7 +223,7 @@ public class BODMain extends JPanel implements KeyListener, MouseListener, Mouse
 	    roomTG.addChild(TableLamp.create_TableLamp());
 		
 		// Create the room's ceiling lamp 
-		//sceneTG.addChild(CeilingLamp.create_CeilingLamp());
+		//roomTG.addChild(CeilingLamp.create_CeilingLamp());
 	    
 
 		
@@ -256,8 +256,32 @@ public class BODMain extends JPanel implements KeyListener, MouseListener, Mouse
 		 TransformGroup table5TG = Table5.create_Table5();
 		 roomTG.addChild(table5TG);		
 		    
+		 //Adding Hanan's Objects 
+		 
+		 TransformGroup ChairTG = ChairHS.create_ChairHS();
+		 roomTG.addChild(ChairTG);
+		 
+		 
+		     
 		    
-		    
+		 
+		 TransformGroup DrugsTG = drugsObject3.create_drugs();
+		 roomTG.addChild(DrugsTG);
+		 //Adding Kabir's objects here 
+		  
+		  
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
 	    //-------------------------------------------------------------------------------------------------------------
 	   
 		
@@ -591,6 +615,30 @@ public class BODMain extends JPanel implements KeyListener, MouseListener, Mouse
         lastMouseX = e.getX();
         lastMouseY = e.getY();
     }
+    
+    
+    private void updateViewTransform() {
+        Transform3D transform = new Transform3D();
+        viewTransformGroup.getTransform(transform);
+
+        Vector3d currentPosition = new Vector3d();
+        transform.get(currentPosition);
+
+        Transform3D rotationTransform = new Transform3D();
+        rotationTransform.rotY(rotationY);
+
+        Transform3D tempRot = new Transform3D();
+        tempRot.rotX(rotationX);
+        rotationTransform.mul(tempRot);
+
+        Matrix3d rotationMatrix = new Matrix3d();
+        rotationTransform.get(rotationMatrix);
+
+        transform.setRotation(rotationMatrix);
+        transform.setTranslation(currentPosition);
+        viewTransformGroup.setTransform(transform);
+    }
+
 
 	
     
